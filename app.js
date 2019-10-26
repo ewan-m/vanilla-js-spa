@@ -1,12 +1,6 @@
 'use-strict';
 
-import { Route } from './routing/route.js';
-import { Router } from './routing/router.js';
-import { configureParallaxScrollHeader } from './utils/parallax-scroll-header.js';
+import { enableRouting } from './routing/router.js';
 
-new Router([
-    new Route('post-one', true),
-    new Route('post-two')
-], 'router-outlet');
 
-configureParallaxScrollHeader();
+enableRouting(['post-one', 'post-two'], 'post-one', 'router-outlet');

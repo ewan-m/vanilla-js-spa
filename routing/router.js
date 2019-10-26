@@ -1,24 +1,24 @@
-'use-strict';
-
-export class Router {
-    constructor(routes, containerId) {
-        this.containerId = containerId;
-        this.routes = routes;
-        this.handleLocationChanges();
-        this.activateNewRoute();
+const replaceInnerHtmlWithNewPage = (response, element) => {
+    if (response.readyState === 4 && response.status === 200) {
+        element.innerHTML = response.responseText;
     }
+};
 
-    handleLocationChanges() {
-        window.addEventListener('hashchange', () => {
-            (window.location.hash.length > 0)
-                ? this.activateNewRoute()
-                : this.activateDefaultRoute();
-        });
-    }
+const loadPage = (pageName, routerOutletId) => {
+    const element = document.getElementById(routerOutletId);
+    const request = new XMLHttpRequest();
+    request.onload = () => replaceInnerHtmlWithNewPage(request, element);
+    request.open("GET", `pages/${pageName}.html`, true);
+    request.send();
+};
 
-    activateDefaultRoute = () =>
-        this.routes.find(route => route.isDefault).activateRoute(this.containerId);
+const getNewRoute = (routes, defaultRoute) =>
+    routes.find(route => window.location.hash.replace("#", "") === route) ||
+    defaultRoute;
 
-    activateNewRoute = () =>
-        this.routes.find(route => route.isActiveRoute()).activateRoute(this.containerId);
+export const enableRouting = (routes, defaultRoute, routerOutletId) => {
+    loadPage(getNewRoute(routes, defaultRoute), routerOutletId);
+    window.addEventListener("hashchange", () =>
+        loadPage(getNewRoute(routes, defaultRoute), routerOutletId)
+    );
 }
