@@ -1,92 +1,36 @@
+@font-face {
+    font-family: "proxima-nova";
+    src: url(./assets/fonts/proxima-nova-soft-light-webfont.woff);
+    font-weight: 300;
+}
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: "proxima-nova";
     font-weight: 300;
-    font-size: 1.25rem;
 }
 
-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 15rem;
-}
-
-.navigation-items {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.navigation-items a {
-    font-size: 2rem;
-    max-width: 50ch;
-    padding: 1rem;
-    color: #fff;
-    text-decoration: none;
-    margin: 0 1rem;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.navigation-items a:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-#header {
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 7px 14px 0px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    overflow: hidden;
-    transition: 0.2s;
-    background-image: url("assets/ocean.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    color: #fff;
+header {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
-#header>h1 {
+ul {
+    list-style: none;
     padding: 0;
-    margin: 0;
-    font-size: 5rem;
-    min-height: 17vh;
-    text-shadow: -7px 0 rgba(0, 0, 0, 0.8), 0 1px rgba(0, 0, 0, 0.8), 1px 0 rgba(0, 0, 0, 0.8), 0 -1px rgba(0, 0, 0, 0.8);
-}
-
-#header>p {
-    font-size: 2rem;
-    max-width: 50ch;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .post {
     max-width: 60ch;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    font-size: 1.25rem;
-    padding: 0.5rem;
-    margin-bottom: 5rem;
+    background-color: #efefef;
+    padding: 1rem;
+    margin: 2rem auto;
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .post img {
     width: 100%;
-}
-
-.post>footer {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #ccc;
-    font-size: 1rem;
 }
