@@ -4,8 +4,17 @@ const replaceInnerHtmlWithNewPage = (response, element) => {
     }
 };
 
+const highlightCorrectMenuItem = pageName => {
+    document
+        .querySelectorAll("a")
+        .forEach(nav => nav.classList.remove("active"));
+    const navElement = document.querySelector(`a[href='#${pageName}']`);
+    navElement.classList.add("active");
+};
+
 const loadPage = (pageName, routerOutletId) => {
     const element = document.getElementById(routerOutletId);
+    highlightCorrectMenuItem(pageName);
     const request = new XMLHttpRequest();
     request.onload = () => replaceInnerHtmlWithNewPage(request, element);
     request.open("GET", `pages/${pageName}.html`, true);
@@ -21,4 +30,4 @@ export const enableRouting = (routes, defaultRoute, routerOutletId) => {
     window.addEventListener("hashchange", () =>
         loadPage(getNewRoute(routes, defaultRoute), routerOutletId)
     );
-}
+};

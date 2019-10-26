@@ -20,7 +20,19 @@ ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+a, li {
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.active {
+    box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .post {
