@@ -2,40 +2,46 @@
 <html lang="en-GB">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>VanillaJS SPA</title>
-    <meta name="author" content="Ewan Morrison">
-    <meta name="description" content="Simple implementation of an SPA in VanillaJS">
-    <meta property="og:image" content="https://2ality.com/2011/10/logo-js/js.jpg">
-    <meta property="og:description" content="Simple implementation of an SPA in VanillaJS">
-    <meta property="og:title" content="Ewan Morrison">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="author" content="Ewan Morrison" />
+    <meta name="description" content="Simple implementation of an SPA in VanillaJS" />
+    <meta property="og:image" content="https://2ality.com/2011/10/logo-js/js.jpg" />
+    <meta property="og:description" content="Simple implementation of an SPA in VanillaJS" />
+    <meta property="og:title" content="Ewan Morrison" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <h1>
-            vanilla spa
-        </h1>
-        <p>
-            simple implementation of a single page application in vanilla javascript
-        </p>
-        <ul class="navigation-items">
-            <li>
-                <a href="#post-one">
-                    post one
-                </a>
-            </li>
-            <li>
-                <a href="#post-two">
-                    post two
-                </a>
-            </li>
-        </ul>
-    </header>
-    <section id="router-outlet">
-    </section>
+    <div class="website-container">
+        <header>
+            <h1>
+                Ewan Morrison
+            </h1>
+            <p>
+                A full stack software engineer with a passion for building great things
+            </p>
+            <ul class="navigation-items">
+                <li>
+                    <a href="#post-one">
+                        work
+                    </a>
+                </li>
+                <li>
+                    <a href="#education">
+                        education
+                    </a>
+                </li>
+                <li>
+                    <a href="#post-two">
+                        contact
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <section id="router-outlet"></section>
+    </div>
     <script type="module" src="app.js"></script>
 </body>
 

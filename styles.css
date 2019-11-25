@@ -39,10 +39,18 @@ a.active {
     max-width: 60ch;
     background-color: #efefef;
     padding: 1rem;
-    margin: 2rem auto;
+    margin: 0rem auto 2rem;
     box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .post img {
     width: 100%;
+}
+
+.website-container {
+    position: absolute;
+    width: 100%;
+    background-image: url('./assets/color-design-flora-1166644.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }

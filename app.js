@@ -3,4 +3,4 @@
 import { enableRouting } from './routing/router.js';
 
 
-enableRouting(['post-one', 'post-two'], 'post-one', 'router-outlet');
+enableRouting(['post-one', 'post-two', 'education'], 'post-one', 'router-outlet');
